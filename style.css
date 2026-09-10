@@ -304,6 +304,87 @@ footer .fine { margin-top: 40px; font-size: 0.82rem; color: var(--ink-soft); bor
 .contact-strip .item { display: flex; gap: 10px; align-items: flex-start; }
 .contact-strip .ti { color: var(--teal-deep); font-size: 20px; margin-top: 2px; }
 
+/* ---------- Highlight strip ---------- */
+.highlight-strip {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 28px 0 4px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 36px;
+}
+.highlight-strip .h-item {
+  text-align: center;
+  color: var(--teal-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 80px;
+}
+.highlight-strip .ti { display: block; font-size: 26px; margin: 0 auto 8px; color: var(--marigold); }
+
+/* ---------- Photo collage (hero) ---------- */
+.collage {
+  position: relative;
+  height: 380px;
+}
+.collage .tile {
+  position: absolute;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+  overflow: hidden;
+}
+.collage .tile:hover { transform: scale(1.04) rotate(0deg) !important; z-index: 10; }
+.collage .tile span { background: rgba(11,46,58,0.55); padding: 5px 10px; border-radius: 999px; }
+.t1 { width: 62%; height: 62%; top: 0; left: 0; background: linear-gradient(160deg, var(--teal-deep), var(--teal-light)); transform: rotate(-2deg); z-index: 3; }
+.t2 { width: 42%; height: 46%; top: 6%; right: 0; background: linear-gradient(160deg, var(--marigold), var(--marigold-deep)); transform: rotate(3deg); z-index: 2; }
+.t3 { width: 46%; height: 40%; bottom: 0; right: 8%; background: linear-gradient(160deg, var(--ink), var(--ink-soft)); transform: rotate(-1deg); z-index: 1; }
+.t4 { width: 34%; height: 34%; bottom: 4%; left: 6%; background: linear-gradient(160deg, var(--teal-light), var(--teal-deep)); transform: rotate(2deg); z-index: 2; }
+
+@media (max-width: 900px) {
+  .collage { height: 300px; }
+}
+
+/* ---------- Interactive service explorer ---------- */
+.explorer-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 0 36px;
+  flex-wrap: wrap;
+}
+.explorer-tabs button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid var(--teal-deep);
+  background: transparent;
+  color: var(--teal-deep);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.explorer-tabs button.active {
+  background: var(--teal-deep);
+  color: #fff;
+}
+.explorer-panel { display: none; }
+.explorer-panel.active { display: grid; }
+.explorer-intro {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto 32px;
+  color: var(--ink-soft);
+}
+
 .todo-flag {
   background: #fff6e0;
   border: 1px dashed var(--marigold-deep);
